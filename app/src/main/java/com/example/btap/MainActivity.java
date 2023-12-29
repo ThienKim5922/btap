@@ -13,7 +13,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 ListView sanphamListView;
-SanphamAdapter sanphamAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,7 @@ SanphamAdapter sanphamAdapter;
         sanphamListView = findViewById(R.id.sanphamListView);
         SanPhamDAO sanPhamDAO = new SanPhamDAO(this);
         ArrayList<SanPham> list = sanPhamDAO.getListSanPham();
-        sanphamAdapter   = new SanphamAdapter(this, list);
+        SanphamAdapter sanphamAdapter   = new SanphamAdapter(this, list);
         sanphamListView.setAdapter(sanPhamAdapter);
     }
 
